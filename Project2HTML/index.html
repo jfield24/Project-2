@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Stock data Analysis">
+
+    <title> Stock Analysis Report</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style-base.css" rel="stylesheet">
+
+    <!-- Bootstrap Core JS  -->
+   <script src="Bootstrap/js/bootstrap.js"></script>
+   <script type="text/javascript" src="Bootstrap/js/bootstrap.min.js"></script>    
+   <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+   <!-- JS for image slide  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+
+
+<body class="bd-color ">
+
+    <div class="container-xxl">
+
+              <header class="row bg-color">
+                      <div class="container-fluid align-items-center ">
+                            <h3 class=" px-3 d-flex py-2 text-white">Stock Analysis Report</h3> 
+                      </div>
+              </header>
+
+  
+              <div class="row py-2 px-2 align-items-center ">
+         
+                      <div class="form-group col-xs-2 col-md-2 mx-2 my-2 btn-block">
+                            <label class="text-white text-wrap" for="Select_company">Select Ticker Name</label>
+                      
+                            <select class="form-control" id="Select_company">
+                                    <option>Apple</option>
+                                    <option>Samsung</option>
+                                    <option>Amazon</option>
+                                    <option>goolge</option>
+                            </select>
+                      </div>
+      
+                      <div class=" container col-md-2 mx-2 my-2 pt-md-4">
+                            <input type="submit" class="btn btn-sm btn-primary " value="Submit"> 
+
+                      </div>
+                      <div class=" container-fluid col-md-5 col-lg-7 col-xl-7 mx-2 my-2 pt-lg-4 text-lg-left align-items-lg-center">
+                            <h4 class="text-white text-wrap"> Stock Analysis of  </h4>
+
+                      </div>
+              </div>
+
+    
+<!--  Drop down code for select company names ----- can be deleted 
+              <div class="row text-align:center">
+
+                  <div class=" col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                  <h1 class="h2">Dashboard</h1>
+                                    <div class="btn-toolbar mb-2 mb-md-0">
+                                      <div class="btn-group me-2">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">1 Years</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">5 years</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">10 years</button>
+                                      </div>
+                                    </div>
+                              </div>
+                  </div>
+
+                </div>      
+              
+              -->
+                
+                  
+                  
+               <!-- body divid in to two col & this is main set -->
+
+                  <div class="row mx-0">
+
+                        <div class=" text-white col-md col-lg-8 col-xl-8 ">
+                        
+                                <div class="row ">
+
+                                  <div class="text-white mx-0 px-0">
+                  
+                                    <main class="col-lg-auto p-md-4">
+                                                <div class="row text-align:center">
+                  
+                                                  <div class=" container row-cols-xl-8">
+                                                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                                            <h1 class="h2">Dashboard</h1>
+                                                              <div class="btn-toolbar mb-2 mb-md-0">
+                                                                <div class="btn-group me-2">
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Daily</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">1 year</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">5 years</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">10 years</button>
+                                                                </div>
+                                                              </div>
+                                                        </div>
+                                                  </div>
+                                                  <!-- Dashboard canvas -->
+                                                  <canvas class="my-4 w-100 bg-White" id="myChart" width="900" height="380"></canvas>
+
+                                                  <!-- Dashboard data set -->
+                                                  <h2>Table Data Set</h2>
+                                                      <div class="table-responsive">
+                                                            <table class="table table-light table-sm">
+                                                                                                <thead>
+                                                                                                  <tr>
+                                                                                                    <th>#</th>
+                                                                                                    <th>Header</th>
+                                                                                                    <th>Header</th>
+                                                                                                    <th>Header</th>
+                                                                                                    <th>Header</th>
+                                                                                                  </tr>
+                                                                                                </thead>
+                                                                                                      <tbody>
+                                                                                                        <tr>
+                                                                                                          <td>1,001</td>
+                                                                                                          <td>Lorem</td>
+                                                                                                          <td>ipsum</td>
+                                                                                                          <td>dolor</td>
+                                                                                                          <td>sit</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,002</td>
+                                                                                                          <td>amet</td>
+                                                                                                          <td>consectetur</td>
+                                                                                                          <td>adipiscing</td>
+                                                                                                          <td>elit</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,003</td>
+                                                                                                          <td>Integer</td>
+                                                                                                          <td>nec</td>
+                                                                                                          <td>odio</td>
+                                                                                                          <td>Praesent</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,003</td>
+                                                                                                          <td>libero</td>
+                                                                                                          <td>Sed</td>
+                                                                                                          <td>cursus</td>
+                                                                                                          <td>ante</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,004</td>
+                                                                                                          <td>dapibus</td>
+                                                                                                          <td>diam</td>
+                                                                                                          <td>Sed</td>
+                                                                                                          <td>nisi</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,005</td>
+                                                                                                          <td>Nulla</td>
+                                                                                                          <td>quis</td>
+                                                                                                          <td>sem</td>
+                                                                                                          <td>at</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,006</td>
+                                                                                                          <td>nibh</td>
+                                                                                                          <td>elementum</td>
+                                                                                                          <td>imperdiet</td>
+                                                                                                          <td>Duis</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,007</td>
+                                                                                                          <td>sagittis</td>
+                                                                                                          <td>ipsum</td>
+                                                                                                          <td>Praesent</td>
+                                                                                                          <td>mauris</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,008</td>
+                                                                                                          <td>Fusce</td>
+                                                                                                          <td>nec</td>
+                                                                                                          <td>tellus</td>
+                                                                                                          <td>sed</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,009</td>
+                                                                                                          <td>augue</td>
+                                                                                                          <td>semper</td>
+                                                                                                          <td>porta</td>
+                                                                                                          <td>Mauris</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,010</td>
+                                                                                                          <td>massa</td>
+                                                                                                          <td>Vestibulum</td>
+                                                                                                          <td>lacinia</td>
+                                                                                                          <td>arcu</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,011</td>
+                                                                                                          <td>eget</td>
+                                                                                                          <td>nulla</td>
+                                                                                                          <td>Class</td>
+                                                                                                          <td>aptent</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,012</td>
+                                                                                                          <td>taciti</td>
+                                                                                                          <td>sociosqu</td>
+                                                                                                          <td>ad</td>
+                                                                                                          <td>litora</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,013</td>
+                                                                                                          <td>torquent</td>
+                                                                                                          <td>per</td>
+                                                                                                          <td>conubia</td>
+                                                                                                          <td>nostra</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,014</td>
+                                                                                                          <td>per</td>
+                                                                                                          <td>inceptos</td>
+                                                                                                          <td>himenaeos</td>
+                                                                                                          <td>Curabitur</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                          <td>1,015</td>
+                                                                                                          <td>sodales</td>
+                                                                                                          <td>ligula</td>
+                                                                                                          <td>in</td>
+                                                                                                          <td>libero</td>
+                                                                                                        </tr>
+                                                                                                      </tbody>
+                                                            </table>
+                                                      </div>
+                                    </main>
+                                        
+                                  </div>
+
+                                </div>  
+                          
+                        
+                        </div>
+
+                          <!-- body divid in to two col for side bar -->
+
+                        <div class="badge-light text-white col-md col-lg-4 col-xl-4"> 
+
+                          <!-- side bar rows 01-->
+
+                          <div class="row mx-0 pt-2 mt-5">
+                                    <h4 class=" text-center align-text-bottom pt-4 " >NY Times Top 5 News</h4>
+                                          <!-- image contianer -->
+                                                  <div class="container-md text-center p-md-2 p-lg-2 ">
+                                                      
+                                                     <!-- single image  <img src="test.jpeg" class="img-thumbnail rounded mx-auto d-block" style =" width:60%;" alt="Cinque Terre"> -->
+
+                                                          <div id="demo" class="carousel slide" data-ride="carousel">
+
+                                                                        <!-- Indicators -->
+                                                                        <ul class="carousel-indicators">
+                                                                          <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                                                          <li data-target="#demo" data-slide-to="1"></li>
+                                                                          <li data-target="#demo" data-slide-to="2"></li>
+                                                                        </ul>
+                                                                        
+                                                                        <!-- The slideshow -->
+                                                                        <div class="carousel-inner d-inline-block">
+
+                                                                              <div class="carousel-item active">
+                                                                                <img src="images/1.JPG" alt="image01" width="100%">
+                                                                              </div>
+                                                                              <div class="carousel-item">
+                                                                                <img src="images/2.JPG" alt="image02" width="100%" >
+                                                                              </div>
+                                                                              <div class="carousel-item">
+                                                                                <img src="images/3.JPG" alt="image03" width="100%">
+                                                                              </div>
+                                                                        </div>
+                                                                        
+                                                                        <!-- Left and right controls -->
+                                                                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                                                                    <span class="carousel-control-prev-icon"></span>
+                                                                        </a>
+                                                                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                                                                                    <span class="carousel-control-next-icon"></span>
+                                                                        </a>
+                                                          </div>
+
+                                                  </div>
+                                         
+ 
+                          </div>   
+                          
+                          <!-- side bar rows 02 for the list-->
+                          <div class="row mx-0 my-lg-2 p-lg-2">
+
+                            <div class="jumbotron bg-dark text-center text-white">
+                                    
+                                        <div class="list-group bd-example link-light">
+                                                                      
+                                          <a href="#" class="list-group-item list-group-item-action ">A simple primary list group item</a>
+                                          <a href="#" class="list-group-item list-group-item-action ">A simple secondary list group item</a>
+                                          <a href="#" class="list-group-item list-group-item-action ">A simple success list group item</a>
+                                          <a href="#" class="list-group-item list-group-item-action ">A simple danger list group item</a>
+                                          <a href="#" class="list-group-item list-group-item-action ">A simple warning list group item</a>
+                                          
+                                        </div>
+                                  
+                            </div>
+
+            </div>    
+                          
+                        
+                        </div>
+                      
+                      
+                  </div>
+
+      
+    </div>
+      <!-- Scripts used for graph -->  
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="dashboard/dashboard.js"></script>
+  
+     
+
+</body>
+</html>
