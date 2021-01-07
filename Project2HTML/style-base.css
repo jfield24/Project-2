@@ -5,7 +5,7 @@
     bottom: 0;
     height: 30px;
     line-height: 30px;
-    background-color: #8b602f;
+
 }
 body {
    
@@ -13,7 +13,6 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #56b35e;
     scroll-behavior: smooth;
 
 }
@@ -22,10 +21,10 @@ body {
     height: 100%;
   }
 .text-type-h6 {
-    font-family: var(--bs-font-sans-serif);
+    font-family:var(--bs-font-sans-serif);
     font-size: 1rem;
     line-height: 1.5;
-    color: #000000;
+    
 }
 .header-bg {
     height: auto;
@@ -34,31 +33,43 @@ body {
     text-decoration-color:rgb(206, 148, 148);
     font-size: 4rem;
 }
+.top5hd{
+    font-style: italic;
+}
 
 .bg-color {
-    background-color: #7D7F80;
+    background-color: #9615DB;
 
 }
 .bd-color {
     background-color: #2D3032;
     
 }
-section {
-    height: 100vh;
-    border: 1px solid #555759;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-size: cover; /* Add this line */
-    background-position: center center; /* Add this line */
-    background-repeat: no-repeat; /* Add this line */
-    background-attachment: fixed; /* Add this line */
+.can-color { 
+    background-color: #ffffff;
+
 }
 
+   
+.btn-submit{
+    background-color: #9615DB;
 
+    
+
+}
 
 /* Add everything below here */
 h4 {
-    color: #d2d3d3;
+    color: #ffffff  ;
+    font-style: italic;
+    
 }
+
+    .columnS{
+        box-sizing: border-box;
+    }
+    /* Set additional styling options for the columns*/
+    .column {
+    float: left;
+    width: 50%;
+    }
