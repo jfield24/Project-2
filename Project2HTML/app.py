@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import run_api
+import run_article
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -29,6 +30,18 @@ def api():
 
     # Update the Mongo database using update and upsert=True
     mongo.db.collection.update({}, stock_data, upsert=True)
+
+    # Redirect back to home page
+    return redirect("/")
+
+@app.route("/articles")
+def articles():
+
+    # Run the scrape function
+    article_data = run_article.run_nyt()
+
+    # Update the Mongo database using update and upsert=True
+    mongo.db.collection.update({}, article_data, upsert=True)
 
     # Redirect back to home page
     return redirect("/")
