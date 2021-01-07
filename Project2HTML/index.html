@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Stock data Analysis">
 
-    <title> Stock Analysis Report</title>
+    <title> S&P 100 Stock Explorer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="Bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
               <header class="row bg-color">
                       <div class="container-fluid align-items-center ">
-                            <h3 class=" px-3 d-flex py-2 text-white">Stock Analysis Report</h3> 
+                            <h3 class=" px-3 d-flex py-2 text-white">S&P 100 Stock Explorer</h3> 
                       </div>
               </header>
 
@@ -40,7 +40,7 @@
               <div class="row py-2 px-2 align-items-center ">
          
                       <div class="form-group col-xs-2 col-md-2 mx-2 my-2 btn-block">
-                            <label class="text-white text-wrap" for="Select_company">Select Ticker Name</label>
+                            <label class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
                       
                             <select class="form-control" id="Select_company">
                                     <option>Apple</option>
@@ -51,23 +51,24 @@
                       </div>
       
                       <div class=" container col-md-2 mx-2 my-2 pt-md-4">
-                            <input type="submit" class="btn btn-sm btn-primary " value="Submit"> 
+                        
+                         <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
 
                       </div>
-                      <div class=" container-fluid col-md-5 col-lg-7 col-xl-7 mx-2 my-2 pt-lg-4 text-lg-left align-items-lg-center">
+                      <!--<div class=" container-fluid col-md-5 col-lg-7 col-xl-7 mx-2 my-2 pt-lg-4 text-lg-left align-items-lg-center">
                             <h4 class="text-white text-wrap"> Stock Analysis of  </h4>
 
                       </div>
               </div>
 
     
-<!--  Drop down code for select company names ----- can be deleted 
+<! Drop down code for select company names ----- can be deleted 
               <div class="row text-align:center">
 
                   <div class=" col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
                               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                                   <h1 class="h2">Dashboard</h1>
-                                    <div class="btn-toolbar mb-2 mb-md-0">
+                                    <div class=" mb-2 mb-md-0">
                                       <div class="btn-group me-2">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">1 Years</button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary">5 years</button>
@@ -98,19 +99,19 @@
                   
                                                   <div class=" container row-cols-xl-8">
                                                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                                                            <h1 class="h2">Dashboard</h1>
+                                                            <h1 class="h2">Stock Analysis of </h1>
                                                               <div class="btn-toolbar mb-2 mb-md-0">
-                                                                <div class="btn-group me-2">
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Daily</button>
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">1 year</button>
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">5 years</button>
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">10 years</button>
+                                                                <div class="btn-group me-2 ">
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
                                                                 </div>
                                                               </div>
                                                         </div>
                                                   </div>
                                                   <!-- Dashboard canvas -->
-                                                  <canvas class="my-4 w-100 bg-White" id="myChart" width="900" height="380"></canvas>
+                                                  <canvas class="my-4 w-100 can-color" id="myChart" width="900" height="380"></canvas>
 
                                                   <!-- Dashboard data set -->
                                                   <div class="container row-cols-xl-8"> 
@@ -134,7 +135,7 @@
                           <!-- side bar rows 01-->
 
                           <div class="row mx-0 pt-2 mt-5">
-                                    <h4 class=" text-center align-text-bottom pt-4 " >NY Times Feature Article</h4>
+                                    <h4 class=" text-center align-text-bottom pt-4 " >NY Times Feature Articles</h4>
                                           <!-- image contianer -->
                                                   <div class="container-md text-center p-md-2 p-lg-2 ">
                                                       
@@ -176,13 +177,24 @@
                                          
  
                           </div>   
+                          <br>
+                          <!--column for the sentence-->
                           
-                          <!-- side bar rows 02 for the list-->
+                            <div class="row">
+                                <div class="column" style="background-color:ß#ffffff;">
+                                    <h2>Article heading </h2>
+                                    <p>Write sentence here</p>
+                                </div>
+                                <br>
+                                <br>
+                          
+                          <!-- side bar  FOR THE NEW PAPER ARTICLES rows 02 for the list-->
+                          
                           <div class="row mx-0 my-lg-2 p-lg-2">
 
                             <div class="jumbotron bg-dark text-center">
                                     
-                                        <div class="list-group bd-example link-light">
+                                        <div class="list-group bd-example link-light top5hd">
                                           <h4>Top 5 Articles</h4>
                                                                       
                                           <a href="#" class="list-group-item list-group-item-action ">A simple primary list group item</a>
