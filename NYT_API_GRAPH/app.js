@@ -84,6 +84,38 @@ d3.csv("Articles_loaded.csv").then(function(ArticlesData) {
     .classed("axis", true)
     .attr("transform", "translate(0, " + chartHeight + ")")
     .call(bottomAxis);
+    
+        /**
+     * Start labels
+     */
+    chartGroup
+      .append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "end")
+      .attr("x", chartWidth / 2)
+      .attr("y", chartHeight + 50)
+      .text("Date");
+
+    chartGroup
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x", -(chartHeight / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Number of Article Hits");
+
+    chartGroup
+      .append("text")
+      .attr("x", chartWidth / 2)
+      .attr("y", 0 - margin.top / 2)
+      .attr("text-anchor", "middle")
+      .style("font-size", "16px")
+      //WRTIE THE TITLE ON THE HTML
+      //.text("Article Hits in the New York times for {company} over a period of time");
+    /**
+     * End Labels
+     */
 }).catch(function(error) {
   console.log(error);
 });
