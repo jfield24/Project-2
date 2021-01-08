@@ -29,5 +29,6 @@ def run_article():
             
         except KeyError:
             articles_df.loc[index, "Articles"] = 0
+            
     # Return results
     return article_data
