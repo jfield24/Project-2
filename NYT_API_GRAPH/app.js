@@ -111,7 +111,8 @@ d3.csv("Articles_loaded.csv").then(function(ArticlesData) {
       .attr("y", 0 - margin.top / 2)
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
-      .text("Article Hits in the New York times for {company} over a period of time");
+      //WRTIE THE TITLE ON THE HTML
+      //.text("Article Hits in the New York times for {company} over a period of time");
     /**
      * End Labels
      */
