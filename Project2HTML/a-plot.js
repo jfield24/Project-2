@@ -32,7 +32,7 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 
 
 // Load data from Articles-walked-this-month.csv
-d3.csv("Articles_loaded.csv").then(function(ArticlesData) {
+d3.csv("articles_loaded.csv").then(function(ArticlesData) {
 
   // Print the ArticlesData
   console.log(ArticlesData);
