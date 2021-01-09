@@ -47,12 +47,13 @@ def run_info():
     feature_article_lead = feature_article["lead_paragraph"]
     
      # Creating the dictionary to hold all the API data
-    stock_data = {}
-    stock_data ["feature_title"]: feature_article_name
-    stock_data[ "feature_p"]: feature_article_lead
-    stock_data["feature_link"]: feature_article_url
-    stock_data["featured_image_url"]: feature_image_link
-    stock_data["article_image_urls"]: article_image_urls
+    data = {
+    "feature_title": feature_article_name,
+    "feature_p": feature_article_lead,
+    "feature_link": feature_article_url,
+    "featured_image_url": feature_image_link,
+    "article_image_urls": article_image_urls
+    }
 
     # Return results
-    return stock_data
+    return data
