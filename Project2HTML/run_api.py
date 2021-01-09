@@ -40,6 +40,15 @@ def run_info():
     feature_article_name = feature_article["headline"]["main"]
     feature_image_link = "https://www.nytimes.com/" + feature_article["multimedia"][0]["url"]
     feature_article_lead = feature_article["lead_paragraph"]
+    
+    stock_data = {
+        "feature_title": feature_article_name,
+        "feature_p": feature_article_lead,
+        "feature_link": feature_article_url,
+        "featured_image_url": feature_image_link,
+        "top5_titles" : article_names,
+        "top5_links" : web_urls
+        }
 
     # Return results
     return stock_data

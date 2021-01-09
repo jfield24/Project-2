@@ -28,7 +28,7 @@
 
 <body class="bd-color ">
 
-    <div class="container-md-12">
+    <div class="container-xxl">
 
               <header class="row bg-color">
                       <div class="container-fluid align-items-center ">
@@ -38,8 +38,8 @@
 
   
               <div class="row py-2 px-2 align-items-center ">
-         <!--changed col-xs-2 col-md-3 mx-2 my-2 btn-block to -->
-                      <div class="form-group col-md-3 col-md-3 mx-2 my-2 btn-block">
+         
+                      <div class="form-group col-xs-2 col-md-2 mx-2 my-2 btn-block">
                             <label class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
                       
                             <select class="form-control" id="Select_company">
@@ -96,8 +96,8 @@
                   
                                     <main class="col-lg-auto p-md-4">
                                                 <div class="row text-align:center">
-                  <!--Changes made th the col.row-cols-xl-8 to -->
-                                                  <div class=" container row-cols-md-7">
+                  
+                                                  <div class=" container row-cols-xl-8">
                                                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                                                             <h1 class="h2">Stock Analysis of </h1>
                                                               <div class="btn-toolbar mb-2 mb-md-0">
@@ -134,18 +134,62 @@
 
                           <!-- side bar rows 01-->
 
-                          
-                          
-                          <div class="row">
-                            <div class="column" style="background-color:ß#ffffff;">
-                              <h2>Latest Stock News</h2>
-                              <img class = "img-responsive" src="{{ stock_data.featured_image_url }}"  alt="Stocknews_Image">
-                              <h3>{{ stock_data.feature_title }}</h3>
-                              <p>{{ stock_data.feature_p }}</p>
-                            </div>
-                            <br>
-                            <br>
+                          <div class="row mx-0 pt-2 mt-5">
+                                    <h4 class=" text-center align-text-bottom pt-4 " >NY Times Feature Articles</h4>
+                                          <!-- image contianer -->
+                                                  <div class="container-md text-center p-md-2 p-lg-2 ">
+                                                      
+                                                     <!-- single image  <img src="test.jpeg" class="img-thumbnail rounded mx-auto d-block" style =" width:60%;" alt="Cinque Terre"> -->
 
+                                                          <div id="demo" class="carousel slide" data-ride="carousel">
+
+                                                                        <!-- Indicators -->
+                                                                        <ul class="carousel-indicators">
+                                                                          <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                                                          <li data-target="#demo" data-slide-to="1"></li>
+                                                                          <li data-target="#demo" data-slide-to="2"></li>
+                                                                        </ul>
+                                                                        
+                                                                        <!-- The slideshow -->
+                                                                        <div class="carousel-inner d-inline-block">
+
+                                                                              <div class="carousel-item active">
+                                                                                <img src="images/1.JPG" alt="image01" width="100%">
+                                                                              </div>
+                                                                              <div class="carousel-item">
+                                                                                <img src="images/2.JPG" alt="image02" width="100%" >
+                                                                              </div>
+                                                                              <div class="carousel-item">
+                                                                                <img src="images/3.JPG" alt="image03" width="100%">
+                                                                              </div>
+                                                                        </div>
+                                                                        
+                                                                        <!-- Left and right controls -->
+                                                                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                                                                    <span class="carousel-control-prev-icon"></span>
+                                                                        </a>
+                                                                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                                                                                    <span class="carousel-control-next-icon"></span>
+                                                                        </a>
+                                                          </div>
+
+                                                  </div>
+                                         
+ 
+                          </div>   
+                          <br>
+                          <!--column for the sentence-->
+                          
+                            <div class="row">
+                                <div class="column" style="background-color:ß#ffffff;">
+                                  <h2>Latest Stock News</h2>
+                                  <img class = "img-responsive" src="{{ stock_data.featured_image_url }}"  alt="Stocknews_Image">
+                                  <h3>{{ stock_data.feature_title }}</h3>
+                                  <p>{{ stock_data.feature_p }}</p>
+                                </div>
+                                <br>
+                                <br>
+                          
                           <!-- side bar  FOR THE NEW PAPER ARTICLES rows 02 for the list-->
                           
                           <div class="row mx-0 my-lg-2 p-lg-2">
