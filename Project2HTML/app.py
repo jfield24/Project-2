@@ -28,8 +28,8 @@ def api():
     stock = mongo.db.stock
     stock_data = run_api.run_info()
     stock.update({}, stock_data, upsert=True)
-    return "API successful!"
-    #return redirect("/")
+    #return "API successful!"
+    return redirect("/")
 
 
 @app.route("/articles")
@@ -38,8 +38,8 @@ def articles():
     stock = mongo.db.stock
     article_data = run_article.run_nyt()
     stock.update({}, article_data, upsert=True)
-    return "API successful!"
-    #return redirect("/")
+    #return "API successful!"
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)
