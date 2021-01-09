@@ -1,146 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Stock data Analysis">
-
-    <title> S&P 100 Stock Explorer</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style-base.css" rel="stylesheet">
-
-    <!-- Bootstrap Core JS  -->
-   <script src="Bootstrap/js/bootstrap.js"></script>
-   <script type="text/javascript" src="Bootstrap/js/bootstrap.min.js"></script>    
-   <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-   <!-- JS for image slide  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>S&P 100 Stock Explorer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
+<body style="background: #2D3032">
 
-
-<body class="bd-color ">
-
-    <div class="container col-md-12">
-
-              <header class="row bg-color">
-                      <div class="container-fluid align-items-center ">
-                            <h3 class=" px-3 d-flex py-2 text-white">S&P 100 Stock Explorer</h3> 
-                      </div>
-              </header>
-
-  
-              <div class="row py-2 px-2 align-items-center ">
-         <!--changed col-xs-2 col-md-3 mx-2 my-2 btn-block to -->
-              <div class="form-group col-md-4 btn-block">
-                            <label class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
-                      
-                            <select class="form-control" id="Select_company">
-                                    <option>Apple</option>
-                                    <option>Samsung</option>
-                                    <option>Amazon</option>
-                                    <option>Google</option>
-                            </select>
-              </div>
-     </div>  
-                      <div class=" container col-md-2 mx-2 my-2 pt-md-4">
-                        
-                         <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
-
-                      </div>
-
-
-                      <div class="container content">
-                        <div class = "row">
-                          
-                          <div style="background:black" class="col-md-8">
-                            <div class ="col-md-12">
-                              <h1 class="h2">Stock Analysis of </h1>
-                              <div class="btn-toolbar mb-2 mb-md-0">
-                               <div class="btn-group me-2 ">
-                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
-                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
-                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
-                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>   
-                      </div> 
-
-                      <div class="container content">
-                        <div class = "row">
-                          
-                          <div style="background:black" class="col-md-8">
-                            <div class ="col-md-12">
-                              <h2>Article Hits</h2>
-                              <p><a class="btn btn-primary btn-lg" href= "/articles" role="button">>Refresh Graph</a></p>
-                              <img src="images/Graph.jpg" class="img-responsive" alt="Responsive image" width="900" height="190" />
-                            </div>
-                          </div>
-                        </div>   
-                      </div>
-
-
-
-                          <!-- body divid in to two col for side bar -->
-
-                    <div style="background: black" class="col-md-4">
-                        <div class = "col-md-12">
-                              <h2>Latest Stock News</h2>
-                              <p><a class="btn btn-primary btn-lg" href= "/api" role="button">>Refresh News Data</a></p>
-                              <img class = "img-responsive" src="{{ stock.featured_image_url | default('static/images/error.png', true) }}"  alt="Stocknews_Image">
-                              <h3>{{ stock.feature_title }}</h3>
-                              <p>{{ stock.feature_p }}</p>
-                             
-                        </div>
-                        <br>
-                        <br>
-
-                          <!-- < side bar  FOR THE NEW PAPER ARTICLES rows 02 for the list -->
-
-                        <div class="jumbotron bg-dark text-center col-md-12">
-                                    
-                              <div class="row">
-                                {% for image_url in stock.article_image_urls %}
-                                  <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="thumbnail">
-                                      <img src="{{image_url.img_url| default('static/images/error.png', true)}}" alt={{image_url.img_url}}>
-                                      <div class="caption">
-                                        <h3 style= "font-weight: bold;">{{image_url.title}}</h3>
-                                      </div>
-                                    </div>
-                                  </div>
-                                {% endfor %}
-                            </div>
-                                  
-                        </div> 
-                      
-                    </div>    
-                          
-                        
-                       
-                      
-                      
-                  
-
-      
+ <!-- Navigation Bar -->
+ <nav style="background: #9615DB" class="navbar navbar-expand-lg navbar-light bg-light"> 
     
-      <!-- Scripts used for graph -->  
+    <a class="navbar-brand active text-white " style = "color:white" href="index.html">S&P 100 Stock Explorer</a>
+      
+  </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="dashboard/dashboard.js"></script>
-  
+  <div class="col-md-8">
+  <div class="col-md-12">
+  <div class="form-group col-md-4 btn-block">
+    
+    <div class="col-md-9">
+      <label style = "color:white" class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
+
+      <select class="form-control" id="Select_company">
+              <option>Apple</option>
+              <option>Samsung</option>
+              <option>Amazon</option>
+              <option>Google</option>
+      </select>
+    </div>
+    
+    <div class="col-md-3">
+      <br>
+    <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
+    </div>
+
+  </div>  
+  </div>
+  </div>
+
+  <div class="container content">
+    
+    <div class ="col-md-8">
+    
+        <div class ="col-md-12">
+          <h1 style = "color:white" class="h2">Stock Analysis of </h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+           <div class="btn-group me-2 ">
+              <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
+            </div>
+          </div>
+          <img src="templates/images/Stock.PNG" class="img-responsive" alt="Responsive image" width="100%" />
+        </div>
+
+        <div class ="col-md-12">
+          <h1 style = "color:white" class="h2">Article Hits</h1>
+          <p><a class="btn btn-primary btn-lg" href= "/articles" role="button">>Refresh Graph</a></p>
+          <img src="templates/images/Graph.jpg" class="img-responsive" alt="Responsive image" width="100%" />
+        </div> 
+
+    </div>    
      
+</div>
+
+  <div style="background: #555759" class="col-md-4">
+    <div class = "col-md-12">
+          <h2>Latest Stock News</h2>
+          <p><a class="btn btn-primary btn-lg" href= "/api" role="button">>Refresh News Data</a></p>
+          <img class = "img-responsive" src="{{ stock.featured_image_url }}"  alt="Stocknews_Image">
+          <h3>{{ stock.feature_title }}</h3>
+          <p>{{ stock.feature_p }}</p>
+         
+    </div>
+
+    <br>
+    <br>
+
+    <div class="jumbotron bg-dark text-center col-md-12">
+                                    
+      <div class="row">
+        {% for image_url in stock.article_image_urls %}
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="thumbnail">
+              <img src="{{image_url.img_url}}" alt={{image_url.img_url}}>
+              <div class="caption">
+                <h3 style= "font-weight: bold;">{{image_url.title}}</h3>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+          
+</div>   
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
