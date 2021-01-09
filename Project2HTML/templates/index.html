@@ -28,7 +28,7 @@
 
 <body class="bd-color ">
 
-    <div class="container-md-12">
+    <div class="container col-md-12">
 
               <header class="row bg-color">
                       <div class="container-fluid align-items-center ">
@@ -39,7 +39,7 @@
   
               <div class="row py-2 px-2 align-items-center ">
          <!--changed col-xs-2 col-md-3 mx-2 my-2 btn-block to -->
-                      <div class="form-group col-md-3 col-md-3 mx-2 my-2 btn-block">
+              <div class="form-group col-md-4 btn-block">
                             <label class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
                       
                             <select class="form-control" id="Select_company">
@@ -48,112 +48,66 @@
                                     <option>Amazon</option>
                                     <option>Google</option>
                             </select>
-                      </div>
-      
+              </div>
+     </div>  
                       <div class=" container col-md-2 mx-2 my-2 pt-md-4">
                         
                          <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
 
                       </div>
-                      <!--<div class=" container-fluid col-md-5 col-lg-7 col-xl-7 mx-2 my-2 pt-lg-4 text-lg-left align-items-lg-center">
-                            <h4 class="text-white text-wrap"> Stock Analysis of  </h4>
 
-                      </div>
-              </div>
 
-    
-<! Drop down code for select company names ----- can be deleted 
-              <div class="row text-align:center">
-
-                  <div class=" col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-                              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                                  <h1 class="h2">Dashboard</h1>
-                                    <div class=" mb-2 mb-md-0">
-                                      <div class="btn-group me-2">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">1 Years</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">5 years</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">10 years</button>
-                                      </div>
-                                    </div>
-                              </div>
-                  </div>
-
-                </div>      
-              
-              -->
-                
-                  
-                  
-               <!-- body divid in to two col & this is main set -->
-
-                  <div class="row mx-0">
-
-                        <div class=" text-white col-md col-lg-8 col-xl-8 ">
-                        
-                                <div class="row ">
-
-                                  <div class="text-white mx-0 px-0">
-                  
-                                    <main class="col-lg-auto p-md-4">
-                                                <div class="row text-align:center">
-                  <!--Changes made th the col.row-cols-xl-8 to -->
-                                                  <div class=" container row-cols-md-7">
-                                                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                                                            <h1 class="h2">Stock Analysis of </h1>
-                                                              <div class="btn-toolbar mb-2 mb-md-0">
-                                                                <div class="btn-group me-2 ">
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
-                                                                </div>
-                                                              </div>
-                                                        </div>
-                                                  </div>
-                                                  <!-- Dashboard canvas -->
-                                                  <canvas class="my-4 w-100 can-color" id="myChart" width="900" height="380"></canvas>
-
-                                                  <!-- Dashboard data set -->
-                                                  <div class="container row-cols-xl-8"> 
-                                                  <h2>Article Hits</h2>
-                                                  <p><a class="btn btn-primary btn-lg" href= "/articles" role="button">>Refresh Graph</a></p>
-                                                  <img src="images/Graph.jpg" class="img-responsive" alt="Responsive image" width="900" height="190" />
-                                                  </div>   
-                                                  
-                                    </main>
-                                        
-                                  </div>
-
-                                </div>  
+                      <div class="container content">
+                        <div class = "row">
                           
-                        
-                        </div>
+                          <div style="background:black" class="col-md-8">
+                            <div class ="col-md-12">
+                              <h1 class="h2">Stock Analysis of </h1>
+                              <div class="btn-toolbar mb-2 mb-md-0">
+                               <div class="btn-group me-2 ">
+                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>   
+                      </div> 
+
+                      <div class="container content">
+                        <div class = "row">
+                          
+                          <div style="background:black" class="col-md-8">
+                            <div class ="col-md-12">
+                              <h2>Article Hits</h2>
+                              <p><a class="btn btn-primary btn-lg" href= "/articles" role="button">>Refresh Graph</a></p>
+                              <img src="images/Graph.jpg" class="img-responsive" alt="Responsive image" width="900" height="190" />
+                            </div>
+                          </div>
+                        </div>   
+                      </div>
+
+
 
                           <!-- body divid in to two col for side bar -->
 
-                        <div class="badge-light text-white col-md col-lg-4 col-xl-4"> 
-
-                          <!-- side bar rows 01-->
-
-                          
-                          
-                          <div class="row">
-                            <div class="column" style="background-color:ß#ffffff;">
+                    <div style="background: black" class="col-md-4">
+                        <div class = "col-md-12">
                               <h2>Latest Stock News</h2>
                               <p><a class="btn btn-primary btn-lg" href= "/api" role="button">>Refresh News Data</a></p>
                               <img class = "img-responsive" src="{{ stock.featured_image_url | default('static/images/error.png', true) }}"  alt="Stocknews_Image">
                               <h3>{{ stock.feature_title }}</h3>
                               <p>{{ stock.feature_p }}</p>
                              
-                            </div>
-                            <br>
-                            <br>
+                        </div>
+                        <br>
+                        <br>
 
                           <!-- < side bar  FOR THE NEW PAPER ARTICLES rows 02 for the list -->
-                          
-                           <div class="row mx-0 my-lg-2 p-lg-2">
 
-                            <div class="jumbotron bg-dark text-center">
+                        <div class="jumbotron bg-dark text-center col-md-12">
                                     
                               <div class="row">
                                 {% for image_url in stock.article_image_urls %}
@@ -168,18 +122,18 @@
                                 {% endfor %}
                             </div>
                                   
-                            </div> 
-
-            </div>    
+                        </div> 
+                      
+                    </div>    
                           
                         
-                        </div>
+                       
                       
                       
-                  </div>
+                  
 
       
-    </div>
+    
       <!-- Scripts used for graph -->  
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
