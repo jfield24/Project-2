@@ -28,10 +28,15 @@ def run_info():
     # Store top 5 articles urls and names
     web_urls = []
     for article in articles_list[:5]:
-        web_urls.append(article["web_url"])
+        web_urls.append("https://www.nytimes.com/" + article["multimedia"][0]["url"])
     article_names = []
+
     for article in articles_list[:5]:
         article_names.append(article["headline"]["main"])
+
+    article_image_urls = []
+    for x in range(len(web_urls)):
+        article_image_urls.append({'title':article_names[x], 'img_url': web_urls[x]})
 
     #Find feature article and its features
     feature_article = articles_list[0]
@@ -41,14 +46,13 @@ def run_info():
     feature_image_link = "https://www.nytimes.com/" + feature_article["multimedia"][0]["url"]
     feature_article_lead = feature_article["lead_paragraph"]
     
-    stock_data = {
-        "feature_title": feature_article_name,
-        "feature_p": feature_article_lead,
-        "feature_link": feature_article_url,
-        "featured_image_url": feature_image_link,
-        "top5_titles" : article_names,
-        "top5_links" : web_urls
-        }
+     # Creating the dictionary to hold all the API data
+    stock_data = {}
+    stock_data ["feature_title"]: feature_article_name
+    stock_data[ "feature_p"]: feature_article_lead
+    stock_data["feature_link"]: feature_article_url
+    stock_data["featured_image_url"]: feature_image_link
+    stock_data["article_image_urls"]: article_image_urls
 
     # Return results
     return stock_data
