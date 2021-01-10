@@ -1,116 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>S&P 100 Stock Explorer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-
-<body style="background: #2D3032">
-
- <!-- Navigation Bar -->
- <nav style="background: #9615DB" class="navbar navbar-expand-lg navbar-light bg-light"> 
-    
-    <a class="navbar-brand active text-white " style = "color:white" href="index.html">S&P 100 Stock Explorer</a>
-      
-  </nav>
-
-  <div class="col-md-8">
-  <div class="col-md-12">
-  <div class="form-group col-md-4 btn-block">
-    
-    <div class="col-md-9">
-      <label style = "color:white" class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
-
-      <select class="form-control" id="Select_company">
-              <option>Apple</option>
-              <option>Samsung</option>
-              <option>Amazon</option>
-              <option>Google</option>
-      </select>
-    </div>
-    
-    <div class="col-md-3">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>S&P 100 Stock Explorer</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="shortcut icon" href="#">
+   </head>
+   <body style="background: #2D3032">
+      <!-- Navigation Bar -->
+      <nav style="background: #9615DB" class="navbar navbar-expand-lg navbar-light bg-light"> 
+         <a class="navbar-brand active text-white " style = "color:white" href="index.html">S&P 100 Stock Explorer</a>
+      </nav>
+      <div class="col-md-8">
+         <div class="col-md-12">
+            <div class="form-group col-md-4 btn-block">
+               <div class="col-md-9">
+                  <label style = "color:white" class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
+                  <select class="form-control" id="Select_company">
+                     <option>Apple</option>
+                     <option>Samsung</option>
+                     <option>Amazon</option>
+                     <option>Google</option>
+                  </select>
+               </div>
+               <div class="col-md-3">
+                  <br>
+                  <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class = "left">
+         <div class="container content">
+            <div class ="col-md-8">
+               <div class ="col-md-12">
+                  <h1 style = "color:white" class="h2">Stock Analysis of </h1>
+                  <div class="btn-toolbar mb-2 mb-md-0">
+                     <div class="btn-group me-2 ">
+                        <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
+                     </div>
+                  </div>
+                  <br>
+                  <img src="https://as2.ftcdn.net/jpg/02/70/84/47/500_F_270844750_QArZGeo6QZuKa36HFZme14lRCwmRmUB2.jpg" class="img-responsive" alt="Responsive image" width="100%" />
+               </div>
+               <div class ="col-md-12">
+                  <h1 style = "color:white" class="h2">Article Hits</h1>
+                  <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/articles" role="button">Refresh Graph</a></p>
+                  <script src="https://d3js.org/d3.v5.min.js"></script>
+                  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                  <script type="text/javascript" href="http://my.domain.com/Users/tgokh/Documents/Monash_Bootcamp/Github/Project-2/Project2HTML/a-plot.js"></script>
+               </div>
+               <br>
+               <br>
+            </div>
+         </div>
+      </div>
+      <div class="right">
+      <div style = "color:white ; background: #555759" class="col-md-12">
+      <h2>Latest Stock News</h2>
+      <p><a class="btn btn-primary btn-lg" style="background: #9615DB" href= "/api" role="button">Refresh News Data</a></p>
+      <img class = "img-responsive" src="{{ stock.featured_image_url }}"  alt="Stocknews_Image">
+      <h3>{{ stock.feature_title }}</h3>
+      <p>{{ stock.feature_p }}</p>
       <br>
-    <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
-    </div>
-
-  </div>  
-  </div>
-  </div>
-<div class = "left">
-<div class="container content">
-    
-    <div class ="col-md-8">
-    
-        <div class ="col-md-12">
-          <h1 style = "color:white" class="h2">Stock Analysis of </h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-           <div class="btn-group me-2 ">
-              <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
-            </div>
-          </div>
-          <br>
-          <img src="https://as2.ftcdn.net/jpg/02/70/84/47/500_F_270844750_QArZGeo6QZuKa36HFZme14lRCwmRmUB2.jpg" class="img-responsive" alt="Responsive image" width="100%" />
-        </div>
-
-        <div class ="col-md-12">
-          <h1 style = "color:white" class="h2">Article Hits</h1>
-          <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/articles" role="button">Refresh Graph</a></p>
-          <script src="https://d3js.org/d3.v5.min.js"></script>
-          <script src="a-plot.js"></script>
-        </div> 
-        <br>
-        <br>
-    </div>    
-     
-</div>
-</div>
-
-<div class="right">
-  <div style = "color:white ; background: #555759" class="col-md-12">
-    
-          <h2>Latest Stock News</h2>
-          <p><a class="btn btn-primary btn-lg" style="background: #9615DB" href= "/api" role="button">Refresh News Data</a></p>
-          <img class = "img-responsive" src="{{ stock.featured_image_url }}"  alt="Stocknews_Image">
-          <h3>{{ stock.feature_title }}</h3>
-          <p>{{ stock.feature_p }}</p>
-         
-    
-
-    <br>
-    <br>
-
-    <div style="background: #555759" class="jumbotron">
-                                    
+      <br>
+      <div style="background: #555759" class="jumbotron">
       <div class="row">
-        {% for image_url in stock.article_image_urls %}
-          
-            <div class="thumbnail">
-              <img src="{{image_url.img_url}}" alt={{image_url.img_url}}>
-              <div class="caption">
-                <h3 style= "font-weight: bold;">{{image_url.title}}</h3>
-              </div>
-            </div>
-          
-        {% endfor %}
-    </div>
-          
-    </div>   
-</div>
-
-<style>
-.right { float: right; margin-right: 70px;}
-.left { float: left;}
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</body>
+      {% for image_url in stock.article_image_urls %}
+      <div class="thumbnail">
+      <img src="{{image_url.img_url}}" alt={{image_url.img_url}}>
+      <div class="caption">
+      <h3 style= "font-weight: bold;">{{image_url.title}}</h3>
+      </div>
+      </div>
+      {% endfor %}
+      </div>
+      </div>   
+      </div>
+      <style>
+      .right { float: right; margin-right: 70px;}
+      .left { float: left;}
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
 </html>
