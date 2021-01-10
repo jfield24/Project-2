@@ -35,11 +35,11 @@ def api():
     stock_data = run_api.run_info()
     stock.update({}, stock_data, upsert=True)
     #return "API successful!"
-    return redirect("/")
+    return render_template("index.html", stock=stock)
 
 
-@app.route("/articles")
-def articles():
+@app.route("/data")
+def data():
 
     articles_df = pd.read_csv('articles.csv')
     company = "Netflix" 
@@ -64,12 +64,8 @@ def articles():
 
     data = articles_df.to_json()
 
-    return render_template("index.html",data=data)      
+    return data      
 
-@app.route("/",methods=['GET'])
-def staticpython(filename):
-
-    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
