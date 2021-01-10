@@ -64,7 +64,7 @@ def data():
 
     data = articles_df.to_json()
 
-    return data      
+    return data   
 
 
 if __name__ == "__main__":
