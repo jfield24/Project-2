@@ -10,6 +10,11 @@
       <script src="https://d3js.org/d3.v5.min.js"></script>
       <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
       <script type="text/javascript" src="{{url_for('static', filename='a-plot.js')}}"></script>
+      <!-- Load TensorFlow.js-->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.9.0"></script>
+      <!-- Load the coco-ssd model. -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@1.1.0"></script>
+  
    </head>
    <body style="background: #2D3032">
       <!-- Navigation Bar -->
@@ -53,7 +58,7 @@
                </div>
                <div class ="col-md-12">
                   <h1 style = "color:white" class="h2">Article Hits</h1>
-                  <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/articles" role="button">Refresh Graph</a></p>
+                  <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/data" role="button">Refresh Graph</a></p>
                   
                   <script type="text/javascript" href="http://my.domain.com/Users/tgokh/Documents/Monash_Bootcamp/Github/Project-2/Project2HTML/a-plot.js"></script>
                   <div class="chart"></div>
@@ -88,6 +93,7 @@
       <style>
       .right { float: right; margin-right: 70px;}
       .left { float: left;}
+      </style>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    </body>
 </html>
