@@ -7,6 +7,9 @@
       <title>S&P 100 Stock Explorer</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="shortcut icon" href="#">
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript" src="{{url_for('static', filename='a-plot.js')}}"></script>
    </head>
    <body style="background: #2D3032">
       <!-- Navigation Bar -->
@@ -51,8 +54,7 @@
                <div class ="col-md-12">
                   <h1 style = "color:white" class="h2">Article Hits</h1>
                   <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/articles" role="button">Refresh Graph</a></p>
-                  <script src="https://d3js.org/d3.v5.min.js"></script>
-                  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                  
                   <script type="text/javascript" href="http://my.domain.com/Users/tgokh/Documents/Monash_Bootcamp/Github/Project-2/Project2HTML/a-plot.js"></script>
                   <div class="chart"></div>
                </div>
