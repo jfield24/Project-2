@@ -23,7 +23,7 @@
       <nav style="background: #9615DB" class="navbar navbar-expand-lg navbar-light bg-light"> 
          <a class="navbar-brand active text-white " style = "color:white" href="index.html">S&P 100 Stock Explorer</a>
       </nav>
-      <div class="col-md-8">
+      <div class="col-md-7">
          <div class="col-md-12">
             <div class="form-group col-md-4 btn-block">
                <div class="col-md-9">
@@ -57,7 +57,10 @@
                   </div>
                   <br>
                   <img src="https://as2.ftcdn.net/jpg/02/70/84/47/500_F_270844750_QArZGeo6QZuKa36HFZme14lRCwmRmUB2.jpg" class="img-responsive" alt="Responsive image" width="100%" />
+                  <br>
+                  <br>
                </div>
+               
                <div style = "background: #555759" class ="col-md-12">
                   <h1 style = "color:white" class="h2">Article Hits</h1>
                   <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/data" role="button">Refresh Graph</a></p>
@@ -71,30 +74,32 @@
          </div>
       </div>
       <div class="right">
-      <div style = "color:white ; background: #555759" class="col-md-12">
-      <h2>Latest Stock News</h2>
-      <p><a class="btn btn-primary btn-lg" style="background: #9615DB" href= "/api" role="button">Refresh News Data</a></p>
-      <img class = "img-responsive" src="{{ stock.featured_image_url }}"  alt="Stocknews_Image">
-      <h3>{{ stock.feature_title }}</h3>
-      <p>{{ stock.feature_p }}</p>
-      <br>
-      <br>
-      <div style="background: #555759" class="jumbotron">
-      <div class="row">
-      {% for image_url in stock.article_image_urls %}
-      <div class="thumbnail">
-      <img src="{{image_url.img_url}}" alt={{image_url.img_url}}>
-      <div class="caption">
-      <h3 style= "font-weight: bold;">{{image_url.title}}</h3>
-      </div>
-      </div>
-      {% endfor %}
-      </div>
-      </div>   
+      <div style = "color:white ; background: #555759" class="col-md-5">
+         <div class="col-md-12"></div>
+            <h2>Latest Stock News</h2>
+            <p><a class="btn btn-primary btn-lg" style="background: #9615DB" href= "/api" role="button">Refresh News Data</a></p>
+            <img class = "img-responsive" src="{{ stock.featured_image_url }}" width="100%"  alt="Stocknews_Image">
+            <h3>{{ stock.feature_title }}</h3>
+            <p>{{ stock.feature_p }}</p>
+            <br>
+            <br>
+               <div style="background: #555759" class="jumbotron">
+               <div class="row">
+               {% for image_url in stock.article_image_urls %}
+               <div class="thumbnail">
+               <img src="{{image_url.img_url}}" alt={{image_url.img_url}}>
+               <div class="caption">
+               <h3 style= "font-weight: bold;">{{image_url.title}}</h3>
+               </div>
+               </div>
+               {% endfor %}
+               </div>
+               </div>   
+         </div>   
       </div>
       <style>
-      .right { float: right; margin-right: 70px;}
-      .left { float: left;}
+      .right { float: right;  margin: 0 1.5%; width: 30%; margin-left: 0px; padding-right: -300px; padding-left: 10px;}
+      .left { float: left; margin: 0 1.5%; width: 63%; padding-right: 700px; padding-left: 10px; margin-bottom: 100px;}
       </style>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    </body>
