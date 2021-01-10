@@ -20,21 +20,18 @@
       </nav>
       <div class="col-md-7">
          <div class="col-md-12">
-            <div class="form-group col-md-4 btn-block">
-               <div class="col-md-9">
-                  <label style = "color:white" class="text-white text-wrap " for="Select_company">Select Ticker Name</label>
-                  <select class="form-control" id="Select_company">
-                     <option>Apple</option>
-                     <option>Samsung</option>
-                     <option>Amazon</option>
-                     <option>Google</option>
-                  </select>
+            <form class="form-inline">
+               <div class="form-group col-md-4 btn-block">
+                  <div class="col-md-9">
+                     <label style = "color:white" class="text-white text-wrap " for="stockInput">Select Ticker Name</label>
+                     <input type="text" class="form-control" id="stockInput" placeholder="Enter a stock - change later">
+                  </div>
+                  <div class="col-md-3">
+                     <br>
+                     <button id="submit" type="submit" class="btn btn-default">Plot Stock</button>
+                  </div>
                </div>
-               <div class="col-md-3">
-                  <br>
-                  <input type="submit" class="btn btn-sm btn-submit text-white " value="Submit"> 
-               </div>
-            </div>
+            </form>
          </div>
       </div>
       <div class = "left">
@@ -42,16 +39,10 @@
             <div class ="col-md-8">
                <div class ="col-md-12">
                   <h1 style = "color:white" class="h2">Stock Analysis of </h1>
-                  <div class="btn-toolbar mb-2 mb-md-0">
-                     <div class="btn-group me-2 ">
-                        <button type="button" class="btn btn-sm btn-outline-secondary text-white ">Daily</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary text-white">1 year</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary text-white">5 years</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary text-white">10 years</button>
-                     </div>
-                  </div>
                   <br>
-                  <img src="https://as2.ftcdn.net/jpg/02/70/84/47/500_F_270844750_QArZGeo6QZuKa36HFZme14lRCwmRmUB2.jpg" class="img-responsive" alt="Responsive image" width="100%" />
+                  <div id="plot"></div>
+                  <script src="../plots.js"></script>
+                  <script src="../config.js"></script>
                   <br>
                   <br>
                </div>
@@ -60,7 +51,7 @@
                   <h1 style = "color:white" class="h2">Article Hits</h1>
                   <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/data" role="button">Refresh Graph</a></p>
                   <div id="chart">
-                  <script type="text/javascript" src="static/a-plot.js"></script>
+                  <script type="text/javascript" src="../static/a-plot.js"></script>
                   </div>
                </div>
                <br>
