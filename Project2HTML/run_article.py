@@ -30,10 +30,8 @@ def run_nyt():
         except KeyError:
             articles_df.loc[index, "Articles"] = 0
 
-    a_data = {
-    "Date": articles_df["Date"],
-    "Articles": articles_df["Articles"]}
+
 
     # Return results
-    return a_data    
+    return articles_df   
     
