@@ -7,14 +7,7 @@
       <title>S&P 100 Stock Explorer</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="shortcut icon" href="#">
-      <script src="https://d3js.org/d3.v5.min.js"></script>
-      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-      <script type="text/javascript" src="{{url_for('static', filename='a-plot.js')}}"></script>
-      <!-- Load TensorFlow.js-->
-      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.9.0"></script>
-      <!-- Load the coco-ssd model. -->
-      <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@1.1.0"></script>
-      
+      <script src="https://d3js.org/d3.v5.min.js"></script>    
 
   
    </head>
@@ -65,7 +58,7 @@
                   <h1 style = "color:white" class="h2">Article Hits</h1>
                   <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/data" role="button">Refresh Graph</a></p>
                   <div id="chart">
-                  <!-- We append our chart here. -->
+                  <script type="text/javascript" src="static/a-plot.js"></script>
                   </div>
                </div>
                <br>
