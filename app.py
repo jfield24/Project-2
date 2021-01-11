@@ -62,9 +62,15 @@ def data():
         except KeyError:
             articles_df.loc[index, "Articles"] = 0
 
-    dictionary = articles_df.to_dict('list')
+        article_list = []
+    for x in range(len(articles_df["Date"])):
+        d = articles_df["Date"]
+        a = articles_df["Articles"]
+        article_list.append({"Date":d[x], 'Articles': a[x]})
+    
+    
 
-    return json.dumps(dictionary)
+    return json.dumps(article_list)
 
 
 if __name__ == "__main__":
