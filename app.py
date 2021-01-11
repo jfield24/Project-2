@@ -21,7 +21,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app")
 def home():
 
     # Find one record of data from the mongo database
-    stock = mongo.db.collection.find_one()
+    stock = mongo.db.stock.find_one()
 
     # Return template and data
     return render_template("index.html",stock=stock)
