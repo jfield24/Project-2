@@ -1,8 +1,6 @@
 // Define SVG area dimensions
-//var svgWidth = 960;
-//var svgHeight = 500;
-var svgWidth = 600;
-var svgHeight = 500;
+var svgWidth = 700;
+var svgHeight = 300;
 
 // Define the chart's margins as an object
 var margin = {
@@ -12,12 +10,14 @@ var margin = {
   left: 60
 };
 
+
+
 // Define dimensions of the chart area
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
 
 // Select body, append SVG area to it, and set its dimensions
-var svg = d3.select("body")
+var svg = d3.select("#chart")
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight);
@@ -31,12 +31,11 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 //("%m/%d/%Y ")
 
 
-// Load data from Articles-walked-this-month.csv
-d3.csv("Articles_loaded.csv").then(function(ArticlesData) {
+// Load data from Articles flask app
+d3.csv("static/articles_loaded.csv").then(function(ArticlesData) {
 
   // Print the ArticlesData
   console.log(ArticlesData);
-//WHATDAVID DID WAS D with a capital and where its Articles it has to be ARTICLES a is capital
   // Format the Date and cast the Articles value to a number
   ArticlesData.forEach(function(data) {
     data.Date = parseTime(data.Date);

@@ -7,7 +7,7 @@ from datetime import datetime, date
 from dateutil.relativedelta import relativedelta, MO
 
 
-def run_article():
+def run_nyt():
     
     articles_df = pd.read_csv('articles.csv')
     company = "Netflix" 
@@ -29,5 +29,9 @@ def run_article():
             
         except KeyError:
             articles_df.loc[index, "Articles"] = 0
+
+
+
     # Return results
-    return article_data
+    return articles_df   
+    
