@@ -35,7 +35,7 @@ def api():
     stock_data = run_api.run_info()
     stock.update({}, stock_data, upsert=True)
     #return "API successful!"
-    return render_template("index.html", stock=stock)
+    return redirect("/")
 
 
 @app.route("/data")
