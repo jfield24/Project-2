@@ -27,11 +27,11 @@ def run_info():
 
     # Store top 5 articles urls and names
     web_urls = []
-    for article in articles_list[:5]:
+    for article in articles_list[1:6]:
         web_urls.append("https://www.nytimes.com/" + article["multimedia"][0]["url"])
     article_names = []
 
-    for article in articles_list[:5]:
+    for article in articles_list[1:6]:
         article_names.append(article["headline"]["main"])
 
     article_image_urls = []
