@@ -26,6 +26,7 @@
                   <div class="col-md-9">
                      <label style = "color:white" class="text-white text-wrap " for="stockInput">Select Ticker Name</label>
                      <select multiple="multiple" class="mdb-select md-form" id="stockInput" searchable="Search here..">
+                        <option value="" disabled selected>Choose the stock</option>
                         {% for item in ddd %}
                         <option value="{{ item }}">{{ item }}</option>
                         {% endfor %}
