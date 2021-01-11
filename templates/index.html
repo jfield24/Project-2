@@ -25,7 +25,13 @@
                <div class="form-group col-md-4 btn-block">
                   <div class="col-md-9">
                      <label style = "color:white" class="text-white text-wrap " for="stockInput">Select Ticker Name</label>
-                     <input type="text" class="form-control" id="stockInput" placeholder="Enter a stock - change later">
+                     <select multiple="multiple" class="mdb-select md-form" id="stockInput" searchable="Search here..">
+                        <option value="" disabled selected>Choose the stock</option>
+                        {% for item in ddd %}
+                        <option value="{{ item }}">{{ item }}</option>
+                        {% endfor %}
+                     <script type="text/javascript" src="{{url_for('static', filename='style.js')}}"></script>
+                     </select>
                   </div>
                   <div class="col-md-3">
                      <br>
