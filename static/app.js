@@ -31,7 +31,8 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 
 
 // Load data from Articles flask app
-d3.csv("static/articles_loaded.csv").then(function(ArticlesData) {
+d3.json("/data").then(function(ArticlesData) {
+
 
   // Print the ArticlesData
   console.log(ArticlesData);

@@ -52,7 +52,7 @@
                   <h1 style = "color:white" class="h2">Article Hits</h1>
                   <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/data" role="button">Refresh Graph</a></p>
                   <div id="chart">
-                  <script type="text/javascript" src="{{url_for('static', filename='a-plot.js')}}"></script>
+                  <script src="{{url_for('static', filename='app.js')}}"></script>
                   </div>
                </div>
                <br>
@@ -89,5 +89,6 @@
       .left { float: left; margin: 0 1.5%; width: 63%; padding-right: 700px; padding-left: 10px; margin-bottom: 100px;}
       </style>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="{{url_for('static', filename='app.js')}}"></script>
    </body>
 </html>

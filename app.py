@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, Response, url_for, request
+from flask import Flask, render_template, redirect, Response, url_for, request, jsonify
 from flask_pymongo import PyMongo
 import run_api
 import json
@@ -62,9 +62,9 @@ def data():
         except KeyError:
             articles_df.loc[index, "Articles"] = 0
 
-    data = articles_df.to_json()
+    dictionary = articles_df.to_dict('list')
 
-    return data   
+    return json.dumps(dictionary)
 
 
 if __name__ == "__main__":
