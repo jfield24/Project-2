@@ -19,17 +19,14 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app")
 # Load SQLite database for dropdown menu rendering
 con = sqlite3.connect('data.sqlite')
 df = pd.read_sql('SELECT * FROM stocks_table', con)
-select = "AAPL"
+
 # Route to render index.html template using data from Mongo
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def home():
-    global select 
-    #if request.method == "POST":
-     #   select = request.form.get('stocktick')
-      #  print(select)
 
     # Find one record of data from the mongo database
     stock = mongo.db.stock.find_one()
+
     # Return template and data
     return render_template("index.html",stock=stock, ddd=df['ticker'].to_list())
 
@@ -37,7 +34,7 @@ def home():
 # # Route that will trigger the scrape function
 @app.route("/api")
 def api():
-    global select
+    
     stock = mongo.db.stock
     stock_data = run_api.run_info()
     stock.update({}, stock_data, upsert=True)
@@ -46,18 +43,15 @@ def api():
 
 @app.route("/select", methods=['POST', 'GET'])
 def select():
-    global select
-    stock = mongo.db.stock.find_one()
-    if request.method == 'POST':
-        message = [str(x) for x in request.form.values()][0]
-        print(message)
-    return render_template('index.html',stock=stock)
+    if request.method == "POST":
+        text = request.select.get('stocktick')
+        return jsonify(text)
 
 @app.route("/data")
 def data():
-    global select
+
     articles_df = pd.read_csv('articles.csv')
-    company = select
+    company = "Netflix"
     # Search for articles that mention company name
     query = company
 
