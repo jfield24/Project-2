@@ -51,7 +51,7 @@ def select():
 def data():
 
     articles_df = pd.read_csv('articles.csv')
-    company = "AAPL"
+    company = "NFLX"
     # Search for articles that mention company name
     query = company
 
