@@ -28,7 +28,7 @@
                      {% for item in ddd %}
                      <option value="{{ item }}">{{ item }}</option>
                      {% endfor %}
-                  <script type="text/javascript" src="{{url_for('static', filename='style.js')}}"></script>
+                  <script type="text/javascript" src="{{url_for('static/js', filename='style.js')}}"></script>
                   </select>
                </form>
             </div>
@@ -45,8 +45,8 @@
                   <h1 style = "color:white" class="h2">Stock Analysis </h1>
                   <br>
                   <div id="plot"></div>
-                  <script type="text/javascript" src="{{url_for('static', filename='plots.js')}}"></script>
-                  <script type="text/javascript" src="{{url_for('static', filename='config.js')}}"></script>
+                  <script type="text/javascript" src="{{url_for('static/js', filename='plots.js')}}"></script>
+                  <script type="text/javascript" src="{{url_for('static/js', filename='config.js')}}"></script>
                   <br>
                   <br>
                </div>
@@ -54,7 +54,7 @@
                <div class ="col-md-12">
                   <h1 style = "color:white" class="h2">Article Hits</h1>
                   <div id="chart" >
-                  <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
+                  <script type="text/javascript" src="{{url_for('static/js', filename='app.js')}}"></script>
                   </div>
                </div>
                <br>
@@ -91,6 +91,6 @@
       .left { float: left; margin: 0 1.5%; width: 63%; padding-right: 700px; padding-left: 10px; margin-bottom: 100px;}
       </style>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="{{url_for('static', filename='app.js')}}"></script>
+      <script src="{{url_for('static/js', filename='app.js')}}"></script>
    </body>
 </html>
