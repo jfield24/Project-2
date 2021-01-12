@@ -8,7 +8,7 @@ import time
 def run_info():
    
     url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?"
-    company = "Netflix"
+    company = "AAPL"
 
     
     # Search for articles that mention company name
