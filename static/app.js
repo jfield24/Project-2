@@ -1,3 +1,4 @@
+
 // Define SVG area dimensions
 var svgWidth = 700;
 var svgHeight = 300;
@@ -15,7 +16,7 @@ var margin = {
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
 
-// Select body, append SVG area to it, and set its dimensions
+// Select body, append SVG area to it, and set its dimes
 var svg = d3.select("#chart")
   .append("svg")
   .attr("width", svgWidth)
@@ -118,3 +119,4 @@ d3.json("/data").then(function(ArticlesData) {
 }).catch(function(error) {
   console.log(error);
 });
+
