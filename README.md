@@ -46,7 +46,7 @@ Dhananga Karunanayake
 
 \> Justin - SQL and Quandl
 
-\> Dee - HTML and CSS rendering
+\> Tanvi/Justin - HTML and CSS rendering
 
 \> Group - JS
 

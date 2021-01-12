@@ -133,8 +133,12 @@ config.py
 
 # Hide config.js
 static/config.js
+static/js/config.js
 
 config.js
 
 # Hide config-alpha.js
 config-alpha.js
+
+# Hide article-config.js
+article-config.js

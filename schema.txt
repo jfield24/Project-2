@@ -3,7 +3,6 @@ DROP TABLE IF EXISTS stocks;
 
 -- Create new table
 CREATE TABLE stocks (
-	id SERIAL PRIMARY KEY,
 	ticker VARCHAR,
 	stock VARCHAR
 );
