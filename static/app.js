@@ -11,12 +11,11 @@ var margin = {
 };
 
 
-
 // Define dimensions of the chart area
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
 
-// Select body, append SVG area to it, and set its dimensions
+// Select body, append SVG area to it, and set its dimes
 var svg = d3.select("#chart")
   .append("svg")
   .attr("width", svgWidth)
@@ -32,7 +31,8 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 
 
 // Load data from Articles flask app
-d3.csv("static/articles_loaded.csv").then(function(ArticlesData) {
+d3.json("/data").then(function(ArticlesData) {
+
 
   // Print the ArticlesData
   console.log(ArticlesData);
@@ -118,3 +118,4 @@ d3.csv("static/articles_loaded.csv").then(function(ArticlesData) {
 }).catch(function(error) {
   console.log(error);
 });
+

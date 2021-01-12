@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, Response
+from flask import Flask, render_template, redirect, Response, url_for, request, jsonify, session
 from flask_pymongo import PyMongo
 import run_api
 import json
@@ -8,6 +8,7 @@ import pandas as pd
 import time
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta, MO
+import sqlite3
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -15,16 +16,21 @@ app = Flask(__name__)
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app")
 
+# Load SQLite database for dropdown menu rendering
+con = sqlite3.connect('data.sqlite')
+df = pd.read_sql('SELECT * FROM stocks_table', con)
 
 # Route to render index.html template using data from Mongo
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def home():
 
     # Find one record of data from the mongo database
-    stock = mongo.db.collection.find_one()
-
+    stock = mongo.db.stock.find_one()
+    if request.method == "POST":
+        text = request.select.get('stocktick')
+        print(text)
     # Return template and data
-    return render_template("index.html",stock=stock)
+    return render_template("index.html",stock=stock, ddd=df['ticker'].to_list())
 
 
 # # Route that will trigger the scrape function
@@ -35,14 +41,19 @@ def api():
     stock_data = run_api.run_info()
     stock.update({}, stock_data, upsert=True)
     #return "API successful!"
-    return render_template("index.html", stock=stock)
+    return redirect("/")
 
+@app.route("/select", methods=['POST', 'GET'])
+def select():
+    if request.method == "POST":
+        text = request.select.get('stocktick')
+        return jsonify(text)
 
 @app.route("/data")
 def data():
 
     articles_df = pd.read_csv('articles.csv')
-    company = "Netflix" 
+    company = "Netflix"
     # Search for articles that mention company name
     query = company
 
@@ -62,9 +73,15 @@ def data():
         except KeyError:
             articles_df.loc[index, "Articles"] = 0
 
-    data = articles_df.to_json()
+        article_list = []
+    for x in range(len(articles_df["Date"])):
+        d = articles_df["Date"]
+        a = articles_df["Articles"]
+        article_list.append({"Date":d[x], 'Articles': a[x]})
+    
+    
 
-    return data   
+    return json.dumps(article_list)
 
 
 if __name__ == "__main__":
