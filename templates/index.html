@@ -21,13 +21,21 @@
       </nav>
       <div class="col-md-7">
          <div class="col-md-12">
-            <div class="col-md-9">
+            <div class="col-md-5">
                <form action="{{ url_for('select')}}" method="POST">
-                  <input type="text" name="interview_score3" placeholder="Input Text to classify" required="required" /><br>
-            
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Submit Stock Ticker</button>
-                </form>
-            
+                  <select multiple="multiple" class="mdb-select md-form initalized" id="stockInput" name="stocktick" searchable="Search for Ticker Name..">
+                     <option value="" disabled selected>Choose the stock</option>
+                     {% for item in ddd %}
+                     <option value="{{ item }}">{{ item }}</option>
+                     {% endfor %}
+                  <script type="text/javascript" src="{{url_for('static', filename='style.js')}}"></script>
+                  </select>
+               </form>
+            </div>
+            <div class="col-md-3">
+               <br>
+               <button id="submit" type="submit" class="btn btn-default" style="background: #9615db; color:white;">Plot Stock</button>
+            </div>
          </div>
       </div>
       <div class="left">
@@ -45,7 +53,7 @@
                
                <div class ="col-md-12">
                   <h1 style = "color:white" class="h2">Article Hits</h1>
-                  <div id="chart" >
+                  <div id="chart" style="background: whitesmoke;">
                   <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
                   </div>
                </div>
@@ -58,7 +66,6 @@
       <div style = "color:white ; background: #555759" class="col-md-5">
          <div class="col-md-12"></div>
             <h2>Latest Stock News</h2>
-            <p><a class="btn btn-primary btn-lg" style="background: #9615DB" href= "/api" role="button">Refresh News Data</a></p>
             <img class = "img-responsive" src="{{ stock.featured_image_url }}" width="100%"  alt="Stocknews_Image">
             <h3>{{ stock.feature_title }}</h3>
             <p>{{ stock.feature_p }}</p>

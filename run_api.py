@@ -1,18 +1,19 @@
 import requests
 from config import api_key
 import time
-from app import select
+
 
 
 
 def run_info():
-    global select
+   
     url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?"
-    company = "Google"
+    
+    company = "Apple Inc"
 
     
     # Search for articles that mention company name
-    query = select
+    query = company
 
     # Build query URL
     query_url = url +"q=" + query + "&fq=news_desk:(Business)&page=0&sort=newest&api-key=" + api_key
