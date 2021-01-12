@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, Response, url_for, request, jsonify
+from flask import Flask, render_template, redirect, Response, url_for, request, jsonify, session
 from flask_pymongo import PyMongo
 import run_api
 import json
@@ -41,12 +41,17 @@ def api():
     #return "API successful!"
     return redirect("/")
 
+@app.route("/select", methods=['POST', 'GET'])
+def select():
+    if request.method == "GET":
+        text = request.args.get('stocktick')
+        return text
 
 @app.route("/data")
 def data():
 
     articles_df = pd.read_csv('articles.csv')
-    company = "Netflix" 
+    company = session.get("/select") 
     # Search for articles that mention company name
     query = company
 
