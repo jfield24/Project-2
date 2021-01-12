@@ -22,7 +22,7 @@
       <div class="col-md-7">
          <div class="col-md-12">
             <div class="col-md-9">
-               <select multiple="multiple" class="mdb-select md-form" id="stockInput" name="stocktick" searchable="Search for Ticker Name..">
+               <select multiple="multiple" class="mdb-select md-form initalized" id="stockInput" name="stocktick" value="{{request.form.stocktick}}" searchable="Search for Ticker Name..">
                   <option value="" disabled selected>Choose the stock</option>
                   {% for item in ddd %}
                   <option value="{{ item }}">{{ item }}</option>
@@ -51,7 +51,6 @@
                
                <div class ="col-md-12">
                   <h1 style = "color:white" class="h2">Article Hits</h1>
-                  <p><a style="background: #9615DB" class="btn btn-primary btn-lg" href= "/data" role="button">See Data</a></p>
                   <div id="chart" style="background-color: white;">
                   <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
                   </div>
