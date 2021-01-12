@@ -22,13 +22,15 @@
       <div class="col-md-7">
          <div class="col-md-12">
             <div class="col-md-9">
-               <select method="POST" action="/select" multiple="multiple" class="mdb-select md-form initalized" id="stockInput" name="stocktick" searchable="Search for Ticker Name..">
-                  <option value="" disabled selected>Choose the stock</option>
-                  {% for item in ddd %}
-                  <option value="{{ item }}">{{ item }}</option>
-                  {% endfor %}
-               <script type="text/javascript" src="{{url_for('static', filename='style.js')}}"></script>
-               </select>
+               <form action="{{ url_for('select')}}" method="POST">
+                  <select multiple="multiple" class="mdb-select md-form initalized" id="stockInput" name="stocktick" searchable="Search for Ticker Name..">
+                     <option value="" disabled selected>Choose the stock</option>
+                     {% for item in ddd %}
+                     <option value="{{ item }}">{{ item }}</option>
+                     {% endfor %}
+                  <script type="text/javascript" src="{{url_for('static', filename='style.js')}}"></script>
+                  </select>
+               </form>
             </div>
             <div class="col-md-3">
                <br>
