@@ -21,12 +21,14 @@ con = sqlite3.connect('data.sqlite')
 df = pd.read_sql('SELECT * FROM stocks_table', con)
 
 # Route to render index.html template using data from Mongo
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def home():
 
     # Find one record of data from the mongo database
     stock = mongo.db.stock.find_one()
-
+    if request.method == "POST":
+        text = request.select.get('stocktick')
+        print(text)
     # Return template and data
     return render_template("index.html",stock=stock, ddd=df['ticker'].to_list())
 
@@ -43,15 +45,15 @@ def api():
 
 @app.route("/select", methods=['POST', 'GET'])
 def select():
-    if request.method == "GET":
-        text = request.args.get('stocktick')
-        return text
+    if request.method == "POST":
+        text = request.select.get('stocktick')
+        return jsonify(text)
 
 @app.route("/data")
 def data():
 
     articles_df = pd.read_csv('articles.csv')
-    company = session.get("/select") 
+    company = "Netflix"
     # Search for articles that mention company name
     query = company
 
