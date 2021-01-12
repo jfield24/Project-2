@@ -8,7 +8,7 @@ from app import select
 def run_info():
     global select
     url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?"
-    company = "Netflix"
+    company = "Google"
 
     
     # Search for articles that mention company name

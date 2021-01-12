@@ -14,7 +14,7 @@ import sqlite3
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app")
+mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app1")
 
 # Load SQLite database for dropdown menu rendering
 con = sqlite3.connect('data.sqlite')
