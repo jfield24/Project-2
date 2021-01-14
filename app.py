@@ -9,12 +9,16 @@ import time
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta, MO
 import sqlite3
+from pymongo import MongoClient
 
 # Create an instance of Flask
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app1")
+#mongo = PyMongo(app, uri="mongodb://localhost:27017/stock_app1")
+
+client = MongoClient("mongodb+srv://project2_:project2@cluster0.rmvtp.mongodb.net/stock_app1?retryWrites=true&w=majority")
+
 
 # Load SQLite database for dropdown menu rendering
 con = sqlite3.connect('data.sqlite')
@@ -25,10 +29,17 @@ df = pd.read_sql('SELECT * FROM stocks_table', con)
 def home():
 
     # Find one record of data from the mongo database
-    stock = mongo.db.stock.find_one()
+    stock_a = client.get_database('stock_app1')
+    x = stock_a.stock.find({},{'_id': False})
+
+    stock = []
+    for i in x: 
+        stock.append(i)
+    print(stock)
+    
 
     # Return template and data
-    return render_template("index.html",stock=stock, ddd=df['ticker'].to_list())
+    return render_template("index.html",stock=stock[0], ddd=df['ticker'].to_list())
 
 
 # # Route that will trigger the scrape function
